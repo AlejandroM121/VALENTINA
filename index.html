@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Valentina ❤️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: url('3c13eda0-6244-46b5-ac39-6bff1d3819d9.png') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: 'Pacifico', cursive;
+      overflow: hidden;
+      transition: background-image 1.5s ease-in-out;
+    }
+
+    #mensaje {
+      font-size: 3.5rem;
+      color: #000;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+      opacity: 0;
+      transform: scale(0.9);
+      animation: aparecer 2s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes aparecer {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    #boton {
+      font-size: 1.8rem;
+      background: rgba(255, 182, 193, 0.85);
+      border: none;
+      padding: 18px 35px;
+      border-radius: 40px;
+      color: white;
+      cursor: pointer;
+      font-family: 'Pacifico', cursive;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 192, 203, 0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    #boton:hover {
+      background: rgba(255, 105, 180, 0.9);
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 182, 193, 1);
+    }
+  </style>
+</head>
+<body>
+  <button id="boton">Haz click aquí, Valentina 💕</button>
+  <h1 id="mensaje" style="display:none;">TE QUIEROOO MUCHO VALENTINA ❤️</h1>
+
+  <audio id="musica" loop>
+    <source src="cancion howl.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const boton = document.getElementById('boton');
+    const mensaje = document.getElementById('mensaje');
+    const musica = document.getElementById('musica');
+
+    boton.addEventListener('click', () => {
+      boton.style.display = 'none';
+      mensaje.style.display = 'block';
+
+      // Cambiar el fondo a la nueva imagen (ajustada a toda la página)
+      document.body.style.backgroundImage = "url('https://i.pinimg.com/1200x/2e/a5/b6/2ea5b65870f1742a2fa6d74c340517d6.jpg')";
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundPosition = "center";
+      document.body.style.backgroundRepeat = "no-repeat";
+      document.body.style.backgroundAttachment = "fixed";
+
+      // Reproducir música desde el segundo 5
+      setTimeout(() => {
+        musica.currentTime = 5;
+        musica.play();
+      }, 500);
+    });
+  </script>
+</body>
+</html>
